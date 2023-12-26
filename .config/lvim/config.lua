@@ -12,8 +12,21 @@ lvim.plugins = {
         end
     },
     { "luisiacc/gruvbox-baby" },
-    { 'ray-x/lsp_signature.nvim' }
+    { 'ray-x/lsp_signature.nvim' },
+
+    { 'Eandrju/cellular-automaton.nvim' },
+    { 'tamton-aquib/duck.nvim' }
 }
+
+lvim.builtin.which_key.mappings["F"] = {
+  name = 'Funnies',
+  d = { '<cmd>lua animals = {"🦆","🦀","🐈","🐎","🦖","🐤"}; require("duck").hatch(animals[math.random(#animals)])<CR>', 'Deploy animal' },
+  k = { '<cmd>lua require("duck").cook()<CR>', 'Kill animal' },
+  r = { '<cmd>CellularAutomaton make_it_rain<CR>', 'Liquify code' },
+  l = { '<cmd>CellularAutomaton game_of_life<CR>', 'Game of life' },
+}
+
+
 lvim.transparent_window = true
 
 vim.opt.tabstop = 4
